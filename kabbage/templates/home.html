@@ -50,35 +50,9 @@
       <div class="form-group">
         <label for="businessTypesEnum">Business Type</label>
         <select name="businessTypesEnum">
-          <option value="Accounting">Accounting</option>
-          <option value="Amusement">Amusement</option>
-          <option value="AutoRepair">AutoRepair</option>
-          <option value="BusinessServices">BusinessServices</option>
-          <option value="Catering">Catering</option>
-          <option value="ChildCare">ChildCare</option>
-          <option value="ComputerServices">ComputerServices</option>
-          <option value="ConsumerGoodsRetailStore">ConsumerGoodsRetailStore</option>
-          <option value="ConsumerGoodsOnlineStore">ConsumerGoodsOnlineStore</option>
-          <option value="ConsumerGoodsOnlineAndOffline">ConsumerGoodsOnlineAndOffline</option>
-          <option value="Construction">Construction</option>
-          <option value="Dentists">Dentists</option>
-          <option value="DryCleaning">DryCleaning</option>
-          <option value="Equipment">Equipment</option>
-          <option value="FoodService">FoodService</option>
-          <option value="Grocery">Grocery</option>
-          <option value="Health">Health</option>
-          <option value="HomeRepair">HomeRepair</option>
-          <option value="Hotels">Hotels</option>
-          <option value="Insurance">Insurance</option>
-          <option value="Janitorial">Janitorial</option>
-          <option value="Landscape">Landscape</option>
-          <option value="Optometrists">Optometrists</option>
-          <option value="Physicians">Physicians</option>
-          <option value="Restaurants">Restaurants</option>
-          <option value="Salons">Salons</option>
-          <option value="Taxis">Taxis</option>
-          <option value="Trucking">Trucking</option>
-          <option value="Veterinarians">Veterinarians</option>
+          {% for type in businessTypes %}
+            <option value="{{ type }}">{{ type }}</option>
+          {% endfor %}
         </select>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
