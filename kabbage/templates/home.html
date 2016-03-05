@@ -1,53 +1,87 @@
 <!doctype html>
 <title>Kabbage</title>
-<div>
-  <h1>Pre-qualification form<h1>
-  {% if error %}
-    <strong>Error:</strong> {{ error }}
-  {% endif %}
-  <form action="{{ url_for('home') }}" method=post>
-    <input type="text" name="firstName">
-    <input type="text" name="lastName">
-    <input type="text" name="emailAddress">
-    <input type="text" name="businessName">
-    <input type="text" name="phoneNumber">
-    <input type="number" name="yearStarted">
-    <input type="number" name="estimatedFICO">
-    <input type="number" name="estimatedAnnualRevenue">
-    <input type="number" name="grossPercentageFromCards">
-    <select name="businessTypesEnum">
-      <option value="Accounting">Accounting</option>
-      <option value="Amusement">Amusement</option>
-      <option value="AutoRepair">AutoRepair</option>
-      <option value="BusinessServices">BusinessServices</option>
-      <option value="Catering">Catering</option>
-      <option value="ChildCare">ChildCare</option>
-      <option value="ComputerServices">ComputerServices</option>
-      <option value="ConsumerGoodsRetailStore">ConsumerGoodsRetailStore</option>
-      <option value="ConsumerGoodsOnlineStore">ConsumerGoodsOnlineStore</option>
-      <option value="ConsumerGoodsOnlineAndOffline">ConsumerGoodsOnlineAndOffline</option>
-      <option value="Construction">Construction</option>
-      <option value="Dentists">Dentists</option>
-      <option value="DryCleaning">DryCleaning</option>
-      <option value="Equipment">Equipment</option>
-      <option value="FoodService">FoodService</option>
-      <option value="Grocery">Grocery</option>
-      <option value="Health">Health</option>
-      <option value="HomeRepair">HomeRepair</option>
-      <option value="Hotels">Hotels</option>
-      <option value="Insurance">Insurance</option>
-      <option value="Janitorial">Janitorial</option>
-      <option value="Landscape">Landscape</option>
-      <option value="Optometrists">Optometrists</option>
-      <option value="Physicians">Physicians</option>
-      <option value="Restaurants">Restaurants</option>
-      <option value="Salons">Salons</option>
-      <option value="Taxis">Taxis</option>
-      <option value="Trucking">Trucking</option>
-      <option value="Veterinarians">Veterinarians</option>
-    </select>
-  </form>
-  {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-  {% endfor %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+{% for message in get_flashed_messages() %}
+  <div class=flash>{{ message }}</div>
+{% endfor %}
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Pre-qualification form</h1>
+    {% if error %}
+      <strong>Error:</strong> {{ error }}
+    {% endif %}
+    <form action="{{ url_for('home') }}" method=post>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName">
+      </div>
+      <div class="form-group">
+        <label for="emailAddress">Email</label>
+        <input type="text" name="emailAddress">
+      </div>
+      <div class="form-group">
+        <label for="businessName">Name of Business</label>
+        <input type="text" name="businessName">
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" name="phoneNumber">
+      </div>
+      <div class="form-group">
+        <label for="yearStarted">Year Started</label>
+        <input type="number" name="yearStarted">
+      </div>
+      <div class="form-group">
+        <label for="estimatedFICO">Estimated Fico</label>
+        <input type="number" name="estimatedFICO">
+      </div>
+      <div class="form-group">
+        <label for="estimatedAnnualRevenue">Estimated Annual Revenue</label>
+        <input type="number" name="estimatedAnnualRevenue">
+      </div>
+      <div class="form-group">
+        <label for="grossPercentageFromCards">Gross percentage from Credit Cards</label>
+        <input type="number" name="grossPercentageFromCards">
+      </div>
+      <div class="form-group">
+        <label for="businessTypesEnum">Business Type</label>
+        <select name="businessTypesEnum">
+          <option value="Accounting">Accounting</option>
+          <option value="Amusement">Amusement</option>
+          <option value="AutoRepair">AutoRepair</option>
+          <option value="BusinessServices">BusinessServices</option>
+          <option value="Catering">Catering</option>
+          <option value="ChildCare">ChildCare</option>
+          <option value="ComputerServices">ComputerServices</option>
+          <option value="ConsumerGoodsRetailStore">ConsumerGoodsRetailStore</option>
+          <option value="ConsumerGoodsOnlineStore">ConsumerGoodsOnlineStore</option>
+          <option value="ConsumerGoodsOnlineAndOffline">ConsumerGoodsOnlineAndOffline</option>
+          <option value="Construction">Construction</option>
+          <option value="Dentists">Dentists</option>
+          <option value="DryCleaning">DryCleaning</option>
+          <option value="Equipment">Equipment</option>
+          <option value="FoodService">FoodService</option>
+          <option value="Grocery">Grocery</option>
+          <option value="Health">Health</option>
+          <option value="HomeRepair">HomeRepair</option>
+          <option value="Hotels">Hotels</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Janitorial">Janitorial</option>
+          <option value="Landscape">Landscape</option>
+          <option value="Optometrists">Optometrists</option>
+          <option value="Physicians">Physicians</option>
+          <option value="Restaurants">Restaurants</option>
+          <option value="Salons">Salons</option>
+          <option value="Taxis">Taxis</option>
+          <option value="Trucking">Trucking</option>
+          <option value="Veterinarians">Veterinarians</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </div>
