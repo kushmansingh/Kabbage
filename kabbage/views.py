@@ -1,3 +1,5 @@
+import requests
+
 from flask import jsonify, request, render_template
 
 from kabbage import app
@@ -33,10 +35,16 @@ BUSINESS_TYPES = [
     'Trucking',
     'Veterinarians']
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def home():
-    error = None
-    if request.method == 'GET':
-        return render_template('home.html', error=error, businessTypes=BUSINESS_TYPES)
-    return render_template('home.html', error=error, businessTypes=BUSINESS_TYPES)
+    return render_template('home.html', businessTypes=BUSINESS_TYPES)
+
+@app.route('/prequal')
+def prequal():
+    href = 'https://api.kabbage.com/v2/prequalify'
+    args = request.query_string
+    args += '&api_key=' + app.config['API_KEY']
+    resp = requests.post(href, data=args)
+    return None
+
 
