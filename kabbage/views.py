@@ -38,4 +38,5 @@ def home():
     error = None
     if request.method == 'GET':
         return render_template('home.html', error=error, businessTypes=BUSINESS_TYPES)
+    return render_template('home.html', error=error, businessTypes=BUSINESS_TYPES)
 

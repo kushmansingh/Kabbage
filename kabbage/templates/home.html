@@ -1,6 +1,9 @@
 <!doctype html>
 <title>Kabbage</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script type="text/javascript" src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{
+  url_for('static', filename='app.js') }}"></script>
 {% for message in get_flashed_messages() %}
   <div class=flash>{{ message }}</div>
 {% endfor %}
@@ -55,7 +58,7 @@
           {% endfor %}
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="#" id="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </div>

@@ -1,0 +1,21 @@
+{
+  "name": "kabbage",
+  "homepage": "https://github.com/kushmansingh/Kabbage",
+  "authors": [
+    "Kush Mansingh <kushmansingh@icloud.com>"
+  ],
+  "description": "",
+  "main": "app.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1"
+  }
+}
