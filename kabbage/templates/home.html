@@ -4,51 +4,49 @@
 <script type="text/javascript" src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{
   url_for('static', filename='app.js') }}"></script>
-{% for message in get_flashed_messages() %}
-  <div class=flash>{{ message }}</div>
-{% endfor %}
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h1>Pre-qualification form</h1>
+    <div class="bg-danger hidden" id="error"></div>
     <form>
       <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName">
+        <label class="control-label" for="firstName">First Name</label>
+        <input class="form-control" type="text" name="firstName">
       </div>
       <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName">
+        <label class="control-label" for="lastName">Last Name</label>
+        <input class="form-control" type="text" name="lastName">
       </div>
       <div class="form-group">
-        <label for="emailAddress">Email</label>
-        <input type="text" name="emailAddress">
+        <label class="control-label" for="emailAddress">Email</label>
+        <input class="form-control" type="text" name="emailAddress">
       </div>
       <div class="form-group">
-        <label for="businessName">Name of Business</label>
-        <input type="text" name="businessName">
+        <label class="control-label" for="businessName">Name of Business</label>
+        <input class="form-control" type="text" name="businessName">
       </div>
       <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" name="phoneNumber">
+        <label class="control-label" for="phoneNumber">Phone Number</label>
+        <input class="form-control" type="text" name="phoneNumber">
       </div>
       <div class="form-group">
-        <label for="yearStarted">Year Started</label>
-        <input type="number" name="yearStarted">
+        <label class="control-label" for="yearStarted">Year Started</label>
+        <input class="form-control" type="number" name="yearStarted">
       </div>
       <div class="form-group">
-        <label for="estimatedFICO">Estimated Fico</label>
-        <input type="number" name="estimatedFICO">
+        <label class="control-label" for="estimatedFICO">Estimated Fico</label>
+        <input class="form-control" type="number" name="estimatedFICO">
       </div>
       <div class="form-group">
-        <label for="estimatedAnnualRevenue">Estimated Annual Revenue</label>
-        <input type="number" name="estimatedAnnualRevenue">
+        <label class="control-label" for="estimatedAnnualRevenue">Estimated Annual Revenue</label>
+        <input class="form-control" type="number" name="estimatedAnnualRevenue">
       </div>
       <div class="form-group">
-        <label for="grossPercentageFromCards">Gross percentage from Credit Cards</label>
-        <input type="number" name="grossPercentageFromCards">
+        <label class="control-label" for="grossPercentageFromCards">Gross percentage from Credit Cards</label>
+        <input class="form-control" type="number" name="grossPercentageFromCards">
       </div>
       <div class="form-group">
-        <label for="typeOfBusiness">Business Type</label>
+        <label class="control-label" for="typeOfBusiness">Business Type</label>
         <select name="typeOfBusiness">
           {% for type in businessTypes %}
             <option value="{{ type }}">{{ type }}</option>

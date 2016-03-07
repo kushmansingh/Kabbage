@@ -1,6 +1,6 @@
 import requests
 
-from flask import jsonify, request, render_template
+from flask import jsonify, request, render_template, make_response
 
 from kabbage.forms import BUSINESS_TYPES, PrequalForm
 from kabbage import app
@@ -22,6 +22,10 @@ def prequal():
     args = request.form.to_dict()
     args['api_key'] = app.config['API_KEY']
     resp = requests.post(href, data=args)
+    if resp.status_code != 200:
+        response = make_response(resp.text)
+        response.status_code = resp.status_code
+        return response
     return jsonify(resp.json())
 
 
