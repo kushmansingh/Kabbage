@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    {% if qual.Qualified == 'true' %}
+      <h1>You qualified!</h1>
+      <p> You qualified for <strong>{{ qual.QualifyAmount }}</strong></p>
+      <a class="btn btn-success" href="{{ qual.RedirectUrl }}">
+        Apply Now!
+      </a>
+    {% else %}
+      <h1>Sorry!</h1>
+      <p>You didn't qualify. &lt;Insert comforting text here&gt;</p>
+      <a class="btn btn-danger" href="/">
+        Go back
+      </a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

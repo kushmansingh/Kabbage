@@ -1,6 +1,14 @@
 console.log('Loaded js');
 
-function submitForm () {
+function gotoResults(result) {
+  var queryString = $.param(result);
+  var redirect = window.location.href + 'result?' + queryString;
+  console.log(redirect);
+  window.location.href = redirect;
+}
+
+function submitForm (e) {
+  e.preventDefault();
   var values = $('form').serializeArray();
   var data = {}
   for (var i = values.length - 1; i >= 0; i--) {
@@ -15,11 +23,11 @@ function submitForm () {
     dataType: 'json',
     data: data,
     success: function(result) {
+      gotoResults(result);
     },
     error: function(result) {
       if(!result.responseJSON){
         $('#error').removeClass('hidden');
-        debugger
         $('#error').text(result.status+' '+result.responseText);
       };
       for (var key in result.responseJSON) {

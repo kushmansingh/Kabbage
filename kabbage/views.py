@@ -28,4 +28,8 @@ def prequal():
         return response
     return jsonify(resp.json())
 
+@app.route('/result', methods=['GET'])
+def result():
+    return render_template('result.html', qual=request.args.to_dict())
+
 
